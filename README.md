@@ -72,12 +72,11 @@ $ docker run --name user-mysql-agent -e MYSQL_ROOT_PASSWORD=root -d -p 3306:3306
 
 
 ### ```optional``` Changing the application properties 
-If you have made changes to the ports you use, or login credentials, or you have another application that uses those ports. You need to update them in the configuration files.
-You will find these files in ```<app name>\src\main\resources\application.properties```
+If you have made changes to used ports, or login credentials, or you have another application that uses those ports. You need to update them in configuration files.
+You will find these in ```<app name>\src\main\resources\application.properties```
 
 
 
-now we have everything configured, we can run the applications
 
 # Run aplications
 ### Agent aplication
@@ -96,6 +95,6 @@ mvn spring-boot:run
 ```
 
 # DONE
-by default user generation is performed every 1 min
+by default user generation is performed every 1 min,
 you can change this in ```.\backDPC\src\main\resources\application.properties``` file
 the value is in ms, so for exapmple if you want to create user for each 10 minuts, set the value for ```intervalUserCreation = 600000```

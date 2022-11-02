@@ -52,10 +52,10 @@ $ docker run --name user-mysql-agent -e MYSQL_ROOT_PASSWORD=root -d -p 3306:3306
 # First configuration
 ### load database schema
 1. Open MySQL Workbech and make connection to the SQL server
-```Hostname:``` 127.0.0.1
-```Username:``` root
-```password:``` root
-```Port:``` 3306
+Hostname: ```127.0.0.1```
+Username: ```root```
+password: ```root```
+Port: ```3306```
 
 2. In ```top bar``` go to ```Server``` -> ```Data Import``` -> and check ```Import from Self-Contained File```. 
 3. Press ```[...]``` button and select ```user-schema.sql``` file
@@ -98,3 +98,5 @@ mvn spring-boot:run
 by default user generation is performed every 1 min,
 you can change this in ```.\backDPC\src\main\resources\application.properties``` file
 the value is in ms, so for exapmple if you want to create user for each 10 minuts, set the value for ```intervalUserCreation = 600000```
+
+```info``` Sometimes jdbc freezes after a failed db insertion and takes about 5 minutes to reconnect (Shut down and turn on the server for testing), but if you execute an sql query on the server with MySQL Workbench it will work immediately

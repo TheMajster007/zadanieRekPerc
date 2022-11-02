@@ -8,12 +8,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Repository
 @Slf4j
 public class UserRepository {
-   private static final String aipUri="http://localhost:8080/api/user";
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -34,23 +33,19 @@ public class UserRepository {
     }
 
 
-
-    public User getFromApi(){
+    public User getFromApi(String uri){
         String jsonString="";
 
         // get JSON as String from API
         try {
             RestTemplate restTemplate = new RestTemplate();
-            jsonString = restTemplate.getForObject(aipUri, String.class); // get Json string from outside API
+            jsonString = restTemplate.getForObject(uri, String.class); // get Json string from outside API
         }catch (Exception e){
+            log.warn("error getting data from API");
             return null;
         }
 
-        String firstName;
-        String lastName;
-        String city;
-        String gender;
-        String email;
+        String firstName, lastName, city, gender, email;
 
         //deserialize json String
         try {
@@ -62,7 +57,8 @@ public class UserRepository {
             city = jsonUser.get("city").getAsString();
 
         }catch (Exception e){
-            log.error("error during deserialization, probably api changed data structure");
+            log.warn("error during deserialization, probably api changed data structure");
+
             return null;
         }
 

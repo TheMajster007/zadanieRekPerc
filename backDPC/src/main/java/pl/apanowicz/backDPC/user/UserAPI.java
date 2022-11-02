@@ -30,7 +30,7 @@ public class UserAPI {
         }
 
         //log.info("User was generated correctly");
-            return true;
+        return true;
     }
 
 

@@ -48,7 +48,7 @@ public class ScheduledTask {
         // we already have a peirce start, turn off the checker
         firstServiceStart = false;
 
-       // generate a new user and pass it to the API
+        // generate a new user and pass it to the API
         if(!userAPI.makeUser()){
             return;
         }

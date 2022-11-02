@@ -6,7 +6,6 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
 import java.util.concurrent.TimeUnit;
 
 @Component
@@ -78,7 +77,7 @@ public class MainTasks {
     }
 
     private QueueMessage decodeString(String strMessage){
-        QueueMessage queMessage = QueueMessage.EMPTY;
+        QueueMessage queMessage;
         try {
             queMessage = QueueMessage.valueOf(strMessage);
         }catch (Exception e){

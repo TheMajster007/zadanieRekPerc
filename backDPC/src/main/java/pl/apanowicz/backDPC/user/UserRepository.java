@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 @Repository
 @Slf4j
 public class UserRepository {
-   private static final String uri = "https://randomuser.me/api/";
+    private static final String uri = "https://randomuser.me/api/";
 
 
     public User generateUser(){

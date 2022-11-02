@@ -1,15 +1,10 @@
-# Dokumentacja urochomieniowa
+# Recruitment task
 
 
-
-# agent 
-Branch odpowiada za tworzenie wersji oporgramowania
+# Software required
+Docker
 ``` c
-git branch // wyswietla liste posiadanych wersji
-git branch "ver1.1" // stworzenie wersji programu o nazwie 1.1
-git checkout "ver1.1" // wybieranie branch'a który ma być aktywny
-
-git branch -d "ver1.1" // usuwa branch o nazwie ver1.1
+https://docs.docker.com/get-docker/
 ```
 
 # Commit

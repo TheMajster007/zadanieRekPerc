@@ -1,8 +1,7 @@
 # Software required
 
 ### Java
-[Java](https://www.java.com) is a programming language and computing platform first released by Sun Microsystems in 1995
-1. Instal [Java](https://www.oracle.com/pl/java/technologies/javase/jdk11-archive-downloads.html) (JDK 11)
+1. Download here -> [Java](https://www.oracle.com/pl/java/technologies/javase/jdk11-archive-downloads.html) (JDK 11)
 2. Setting Java variables in Windows [Tutorial](https://www.ibm.com/docs/en/b2b-integrator/5.2?topic=installation-setting-java-variables-in-windows)
 3. Verify java installation.
 ```command
@@ -11,24 +10,18 @@ $ java -version
 
 
 ### Maven
-[Apache Maven](https://maven.apache.org/) is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information. 
-
-1. Download [Maven](https://maven.apache.org/install.html) Zip File and Extract
+1. Download here -> [Maven](https://maven.apache.org/install.html) Zip File and Extract
 2. How to install Maven on Windows [tutorial](https://phoenixnap.com/kb/install-maven-windows)
-4. Verify Maven installation.
+3. Verify Maven installation.
 ```command
 $ mvn -version
 ```
-
-5. Reboot your system 
+4. Reboot your system 
 
 
 
 ### Docker
-
-[Docker](https://docs.docker.com) is a platform designed to help developers build, share, and run modern applications.
-
-1. Install [Docker](https://docs.docker.com/get-docker/)
+1. Download here -> [Docker](https://docs.docker.com/get-docker/)
 2. Open Terminal and run RabbitMQ server ( first '-p port' is for GUI plugin )
 ```docker
 $ docker run -d --hostname rabbitmq-dpc --name rabbitmq-dpc -p 15672:15672 -p 5672:5672 rabbitmq:3-management
@@ -40,25 +33,22 @@ $ docker run --name user-mysql-agent -e MYSQL_ROOT_PASSWORD=root -d -p 3306:3306
 
 
 ### MySQL Workbench
-[MySQL Workbench](https://www.mysql.com/products/workbench/) is a unified visual tool for database architects, developers, and DBAs. MySQL Workbench provides data modeling, SQL development, and comprehensive administration tools for server configuration, user administration, backup, and much more.
-1. Install [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
+1. Download here -> [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
 
 ### ```optional``` IntelliJ IDEA
-[IntelliJ IDEA](https://www.jetbrains.com/idea/) is an integrated development environment (IDE) written in Java for developing computer software written in Java, Kotlin, Groovy, and other JVM-based languages
-
-1. Instal [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) Community version (FREE)
+1. Download here -> [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) Community version (FREE)
 
 
 # First configuration
 ### load database schema
-1. Open MySQL Workbech and make connection to the SQL server
+1. Open MySQL Workbech and make connection with the SQL server
 Hostname: ```127.0.0.1```
 Username: ```root```
 password: ```root```
 Port: ```3306```
 
 2. In ```top bar``` go to ```Server``` -> ```Data Import``` -> and check ```Import from Self-Contained File```. 
-3. Press ```[...]``` button and select ```user-schema.sql``` file
+3. Press ```[...]``` button and select ```user-schema.sql``` file from repository
 4. Click ```Start Import```
 
 
@@ -85,7 +75,7 @@ You will find these in ```<app name>\src\main\resources\application.properties``
 ```mvn
 mvn spring-boot:run
 ```
-Now agent aplication is running, dont close the window
+Now agent aplication is running, dont close that window
 
 ### BackEnd application
 1. Open new terminal and set used path to ```.\backDPC```
